@@ -6,7 +6,7 @@ const Posts = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postPerPage, setPostPerPage] = useState(10);
+    const [postPerPage] = useState(10);
 
     useEffect(() => {
         const fetchPost = async () => {
@@ -36,6 +36,7 @@ const Posts = () => {
                 {
                     currentPosts.map(post => (
                         <li key={post.id} style={{ background: "darkcyan", color: "white", margin: "10px", padding: "20px", listStyle: "none", borderRadius: "10px" }}>
+                            <h3>{post.id}</h3>
                             <h2>{post.title}</h2>
                             <p>{post.body}</p>
                         </li>
